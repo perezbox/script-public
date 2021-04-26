@@ -5,4 +5,12 @@
     DocumentRoot /var/www/your_domain
     ErrorLog ${APACHE_LOG_DIR}/your_domain.error.log
     CustomLog ${APACHE_LOG_DIR}/your_domain.access.log combined
+
+    RewriteEngine on
+
+    <directory /var/www/your_domain/>
+       Options Indexes FollowSymLinks MultiViews
+       AllowOverride All
+       Require all granted
+    </directory>
 </VirtualHost>
