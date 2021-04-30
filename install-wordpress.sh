@@ -53,7 +53,7 @@ mv /var/www/$directory/wp-config-sample.php /var/www/$directory/wp-config.php
 #making sure the user and group are correct for directory
 echo "Set user to Apache user and group" 
 
-chown -R www-data:ww-data /var/www/$directory
+chown -R www-data:www-data /var/www/$directory
 
 #using a preset vhosts file to help reduce errors. this file has specific phrasing we use to update with the domain name
 curl "https://raw.githubusercontent.com/perezbox/script-public/main/vhosts" > /etc/apache2/sites-available/$directory.conf
@@ -76,7 +76,7 @@ echo "Please enter the root password for your DB here:"
 read ROOTPASS
 
 DBNAME=db_$RANDOM
-DBPASS=`openssl rand -base64 10`
+DBPASS=`openssl rand -base64 10 | sed 's#/##g'`
 DBUSER=user_$DBNAME
 
 echo "New database is being created"
