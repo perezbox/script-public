@@ -39,6 +39,9 @@ apt -y install apache2 certbot python3-certbot-apache
 echo "Updating Firewall to allow APACHE"
 ufw allow 'Apache Full'
 
+echo "Enabling rewrite module"
+a2enmod rewrite
+
 echo "Enabling the SSL Module to all for HTTPS connections"
 a2enmod ssl
 systemctl restart apache2
