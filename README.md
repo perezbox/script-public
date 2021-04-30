@@ -7,7 +7,7 @@ You will find the following files in the repo:
 - install-wordpress.sh: This script was built to be on a one click option to get WordPress set up quickly, helping me from forgetting steps and helping me standardize the steps. 
 - vhosts: This is a basic template I use with the install-wordpress.sh script, it was modified so that I can quickly update appropriate sections to fit my naming convention.
 
-##How to use
+## How to Use These Scripts
 
 To use these files, you can clone them locally or copy the contents into their own file on your server. 
 
