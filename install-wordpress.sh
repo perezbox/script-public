@@ -68,7 +68,10 @@ echo "Testing new vhosts syntax"
 apache2ctl configtest 
 
 echo "Reloading Apache with new config file"
-systemctl reload apache2 
+systemctl reload apache2
+
+echo "Configure HTTPS on this domain"
+certbot -d $directory
 
 #creating a new DB and pushing the values to wp-config programmaticallly
 echo "Let's configure the DB and WP-CONFIG files..."
