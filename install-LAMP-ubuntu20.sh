@@ -22,6 +22,14 @@
 
 #Configuring a web server on Ubuntu 20.04 LTS
 
+echo "What would you like to call this server (setting hostname)?"
+
+read hostname
+
+echo "Settings hostname to system..."
+hostnamectl set-hostname $hostname
+s -i "s/localhost/$hostname/g" "/etc/hostname"
+
 echo "Preparing server environment.."
 echo "Checking for updates..."
 apt update
