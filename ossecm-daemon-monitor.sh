@@ -33,8 +33,8 @@ echo `date "+%Y-%m-%d %H:%M "`"$i Running...";
 
 else
 	
-echo `date "+%Y-%m-%d %H:%M "`"$i not running..."; >> /root/documents/logs/ossecm/ossecm-monitoring.log
-curl -X POST --data-urlencode "payload={\"channel\": \"#[replacechannel]\", \"username\": \"[replaceuser] OSSECM $date:\", \"text\": \"[replacetitle]: $i Daemons disabled. Remediation required.\", \"icon_emoji\": \":ghost:\"}" replaceslackhook
+echo `date "+%Y-%m-%d %H:%M "`"$i not running..."; >> /root/monitoring-scripts/logs/ossecm-monitoring.log
+curl -X POST --data-urlencode "payload={\"channel\": \"#replacechannel\", \"username\": \"replaceuser OSSECM $date:\", \"text\": \"replacetitle: $i Daemons disabled. Remediation required.\", \"icon_emoji\": \":ghost:\"}" replaceslackhook
 
 fi;
 done
