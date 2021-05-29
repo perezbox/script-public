@@ -28,7 +28,7 @@ echo "Download the monitoring script..."
 echo "This script is being written to /root/monitoring-scripts/ossecm-daemon-monitor.sh"
 
 # Downloading the script you'll need for the cronjob
-curl "https://raw.githubusercontent.com/perezbox/script-public/main/ossecm-daemon-monitor.sh" > /root/monitoring-scripts/ossecm-daemon-monitor.sh
+curl "https://raw.githubusercontent.com/perezbox/script-public/main/OSSEC/ossecm-daemonmonitor.sh" > /root/monitoring-scripts/ossecm-daemon-monitor.sh
 chmod +x /root/monitoring-scripts/ossecm-daemon-monitor.sh
 
 # Creating the scheduler in crontab
