@@ -84,6 +84,6 @@ read $dbuserpass
 ssh $rootuser@$serverip "mysql --user="$dbroot" -p --execute=\"create user '$dbuser'@'localhost' identified by '$dbuserpass';\""
 
 echo "Giving $dbuser privileges to $dbname database..."
-ssh $rootuser@$serverip "mysql --user="$dbroot" -p --execute=\"grant all privileges on $dbname.* to $dbuser@localhost ;\"" 
+ssh $rootuser@$serverip "mysql --user="$dbroot" -p --execute=\"grant all privileges on $dbname.* to i'$dbuser'@'localhost' ;\"" 
 
 #ssh $rootuser@$serverip "mysql -u dbroot -p$dbrootpass $dbname < /var/www/$domain/wp-content/$domain.sql"
