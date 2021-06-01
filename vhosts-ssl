@@ -1,0 +1,20 @@
+<VirtualHost *:443>
+    ServerName your_domain
+    ServerAlias www.your_domain
+    ServerAdmin info@your_domain
+    DocumentRoot /var/www/your_domain
+    ErrorLog ${APACHE_LOG_DIR}/your_domain.error.log
+    CustomLog ${APACHE_LOG_DIR}/your_domain.access.log combined
+
+    RewriteEngine on
+
+    SSLCertificateFile /etc/letsencrypt/live/your_domain/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/your_domain/privkey.pem
+    Include /etc/letsencrypt/options-ssl-apache.conf
+
+    <directory /var/www/your_domain/>
+       Options Indexes FollowSymLinks MultiViews
+       AllowOverride All
+       Require all granted
+    </directory>
+</VirtualHost>
