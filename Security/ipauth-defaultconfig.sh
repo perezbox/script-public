@@ -6,7 +6,7 @@ IP6="/sbin/ip6tables"
 IPS=`curl --max-time 5 -s "enter_web_hook" | grep "success" | cut -d ":" -f 3 | cut -d "," -f 1`
 #HM="47.145.21.43"
 #OF="47.180.59.90"
-#JB="jumpbox"
+JB="jumpbox"
 
 #REMOVE IPT TEMP FILE IF IT EXISTS
 rm -f /root/ipt1
@@ -34,7 +34,7 @@ MDATE=`date +"%Y-%m-%d %H:%M:%S"`
 /bin/echo "$MDATE DEBUG: Reloading firewall" >> /var/log/fw.log
 
 # ALLOW SSH
-#$IPT -A INPUT --source "$JB" -p tcp --dport 22 -j ACCEPT -m comment --comment "JumpBox"
+$IPT -A INPUT --source "$JB" -p tcp --dport 22 -j ACCEPT -m comment --comment "JumpBox"
 
 # DENY
 $IPT -A INPUT -p tcp --dport 22 -j DROP
