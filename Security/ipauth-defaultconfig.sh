@@ -4,8 +4,8 @@
 IPT="/sbin/iptables"
 IP6="/sbin/ip6tables"
 IPS=`curl --max-time 5 -s "enter_web_hook" | grep "success" | cut -d ":" -f 3 | cut -d "," -f 1`
-#HM="home"
-#OF="office"
+#HM="homeip"
+#OF="officip"
 JB="jumpbox"
 
 #REMOVE IPT TEMP FILE IF IT EXISTS
